@@ -46,7 +46,7 @@ DELETE /user/addresses/{id}         - To delete a user address from database
 
 ## Getting started
 
-install the install dependencies
+install dependencies
 
 - $ pip install -r requirements.txt
 
