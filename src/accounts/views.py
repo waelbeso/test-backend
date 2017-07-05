@@ -245,7 +245,7 @@ class AddressViewSet(viewsets.ModelViewSet):
         data['zip_code'] = json_data["zip_code"]
         data['address']  = json_data["address"]
 
-        serializer = UserAddressSerializer(data=json_data)
+        serializer = UserAddressSerializer(data=data)
         if serializer.is_valid():
 
             address = Address.objects.create(
@@ -271,7 +271,7 @@ class AddressViewSet(viewsets.ModelViewSet):
     		return JsonResponse({ "errors": "empty payload" }, status=400)
 
     	try:
-    		return Address.objects.get(pk=pk)
+    		Address.objects.get(pk=pk)
     	except Address.DoesNotExist:
     		return JsonResponse({ "errors": 'Does not exist' }, status=404,safe=False)
 
